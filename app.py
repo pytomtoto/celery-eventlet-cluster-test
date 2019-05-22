@@ -10,7 +10,10 @@ MQ_HOST = os.environ.get("MQ_HOST")
 app = Celery(
     'app',
     broker='amqp://{}:{}@{}//'.format(MQ_USER, MQ_PWD, MQ_HOST),
+    broker_heartbeat=60
 )
+app.conf.broker_heartbeat = 60
+app.conf.BROKER_HEARTBEAT = 60
 
 
 @shared_task
