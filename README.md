@@ -16,9 +16,9 @@
 - export MQ_HOST=your_mq_host
 
 ### In dockerfile
-- ADD MQ_USER your_mq_user
-- ADD MQ_PWD your_mq_password
-- ADD MQ_HOST your_mq_host
+- ENV MQ_USER your_mq_user
+- ENV MQ_PWD your_mq_password
+- ENV MQ_HOST your_mq_host
 
 ## Install requirements
 - pip3 install -r requirements.txt
